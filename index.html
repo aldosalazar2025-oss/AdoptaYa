@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADOPTA YA !!! — Encuentra a tu compañero ideal</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="paw-field" aria-hidden="true">
+    <span style="left:6%; animation-delay:0s; animation-duration:14s;">🐾</span>
+    <span style="left:18%; animation-delay:2s; animation-duration:11s;">🐾</span>
+    <span style="left:32%; animation-delay:5s; animation-duration:16s;">🐾</span>
+    <span style="left:48%; animation-delay:1s; animation-duration:13s;">🐾</span>
+    <span style="left:63%; animation-delay:4s; animation-duration:15s;">🐾</span>
+    <span style="left:77%; animation-delay:3s; animation-duration:12s;">🐾</span>
+    <span style="left:90%; animation-delay:6s; animation-duration:17s;">🐾</span>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <div class="brand-mark">ADOPTA <span class="brand-ya">YA</span><span class="bounce">!</span><span class="bounce d2">!</span><span class="bounce d3">!</span></div>
+      <div class="eyebrow">Refugios y rescatistas de la ciudad, en un solo lugar</div>
+      <h1>Cada ficha es <em>una vida</em> esperando un hogar.</h1>
+      <p>ADOPTA YA !!! reúne los reportes de refugios y rescatistas independientes en fichas técnicas claras, para que encuentres a tu compañero ideal sin vueltas — y con responsabilidad.</p>
+      <div class="hero-stats">
+        <div class="stat"><div class="n" id="statTotal">—</div><div class="l">en adopción</div></div>
+        <div class="stat"><div class="n" id="statVax">—</div><div class="l">vacunados</div></div>
+        <div class="stat"><div class="n" id="statShelters">—</div><div class="l">refugios aliados</div></div>
+      </div>
+    </div>
+    <div class="tag-wrap">
+      <div class="kennel-tag">
+        <div class="hole"></div>
+        <div class="stamp">EN ADOPCIÓN</div>
+        <div>
+          <div class="paw">🐾</div>
+        </div>
+        <div>
+          <div class="tag-name">Ficha N.º 001</div>
+          <div class="tag-sub mono">EDAD · VACUNAS · CARÁCTER</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="filter-section">
+  <div class="wrap">
+    <div class="filter-row">
+      <div class="search-box">
+        <input id="searchInput" type="text" placeholder="Buscar por nombre o carácter…" />
+      </div>
+      <div class="chip-group" id="typeChips"></div>
+      <div class="chip-group" id="sizeChips"></div>
+      <div class="chip" id="vaxChip">Solo vacunados</div>
+      <div class="age-slider">
+        <span>Edad máx.</span>
+        <input type="range" id="ageRange" min="0" max="12" value="12" />
+        <span id="ageValue" class="mono">12 años</span>
+      </div>
+      <button class="match-btn" id="matchBtn">✦ Encuentra tu match</button>
+    </div>
+    <div class="results-count" id="resultsCount"></div>
+  </div>
+</section>
+
+<section class="grid-section">
+  <div class="wrap">
+    <div class="grid" id="petGrid"></div>
+  </div>
+</section>
+
+<footer>
+  ADOPTA YA !!! · PLATAFORMA DE ADOPCIÓN RESPONSABLE · DATOS SINCRONIZADOS EN TIEMPO REAL CON FIREBASE FIRESTORE
+  <div style="margin-top:8px;"><span class="admin-link" id="adminLink">Acceso administrador</span></div>
+</footer>
+
+<div class="fab" id="addPetBtn">＋ Agregar mascota</div>
+
+<div class="overlay" id="fichaOverlay">
+  <div class="modal" id="fichaModal"></div>
+</div>
+
+<div class="overlay" id="formOverlay">
+  <div class="modal" id="formModal"></div>
+</div>
+
+<div class="overlay" id="petFormOverlay">
+  <div class="modal" id="petFormModal"></div>
+</div>
+
+<div class="overlay" id="loginOverlay">
+  <div class="modal" id="loginModal"></div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Fichas de mascotas: cualquiera puede LEER (para que el catálogo público funcione),
+    // pero solo un usuario autenticado (el administrador) puede crear, editar o borrar.
+    match /mascotas/{petId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    // Postulaciones de adopción: cualquier visitante puede CREAR una postulación
+    // (es el formulario público), pero solo el administrador puede leerlas,
+    // editarlas o borrarlas — así nadie puede ver o alterar los datos de otros postulantes.
+    match /postulaciones/{appId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null;
+    }
+
+    // Documento de control del sembrado inicial de datos.
+    match /meta/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    // Cualquier otra colección queda bloqueada por defecto.
+  }
+}
